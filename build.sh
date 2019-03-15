@@ -18,5 +18,6 @@ export IMAGE_NAME=$IMAGE:$TAG && \
              --build-arg VCS_REF=$COMMIT_HASH \
              --build-arg DOCKER_REPO=$DOCKER_REPO \
              --build-arg IMAGE_NAME=$IMAGE_NAME \
+             --build-arg IMAGE_COMMIT=$IMAGE_COMMIT \
              --squash --force-rm --compress --rm \
              -t $IMAGE_NAME .
