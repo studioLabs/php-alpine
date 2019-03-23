@@ -13,8 +13,5 @@ export IMAGE=startupstudio/php-alpine
 export IMAGE_COMMIT=$IMAGE:$TAG-$COMMIT_HASH
 
 export IMAGE_NAME=$IMAGE:$TAG && \
-             docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-             --file Dockerfile \
-             --build-arg VCS_REF=$COMMIT_HASH \
-             --squash --force-rm --compress --rm \
+             docker build --file Dockerfile \
              -t $IMAGE_NAME .
